@@ -1,0 +1,579 @@
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  🎨 CHANGE YOUR COLOR — THIS IS THE ONLY PART TO EDIT       ║
+   ╚══════════════════════════════════════════════════════════╝
+
+   Grey lines are OFF. The one line that isn't grey is ON.
+
+   HOW TO SWITCH:
+     1. Click the PEACH color line and press Ctrl+/ (Cmd+/ on Mac). It turns grey = OFF.
+     2. Click the color line you want and press Ctrl+/ again. It turns on = ON.
+     3. Save and refresh your site.
+
+   Want your own color? Change the #code on the ON line to any hex code
+   (search "color picker" on Google). Bright, medium colors look best. */
+
+:root {
+  /* 🟠 PEACH */
+  /*--accent: #ff8a5c; */
+
+  /* 🔵 SKY BLUE */
+   /* --accent: #7cc4ff;  */
+
+  /* 🟣 LAVENDER */
+  --accent: #b69cff;
+
+  /* 🟢 MINT */
+  /* --accent: #6fd6a0; */
+
+  /* 🟡 SUNFLOWER */
+  /* --accent: #ffc94d; */
+
+  /* 🩷 BUBBLEGUM */
+  /* --accent: #ff8fc7; */
+
+  /* 🔴 CHERRY */
+  /* --accent: #ff6b6b; */
+
+  /* 🩵 AQUA */
+  /* --accent: #5ce1e6; */
+
+  /* 🍏 LIME */
+  /* --accent: #c5e063; */
+}
+
+/* ⛔ STOP HERE — you don't need to change anything below this line.
+   (But feel free to explore once you're comfortable!) */
+
+/* Colors for light mode */
+:root {
+  --bg: #fbf8f3;
+  --surface: #ffffff;
+  --ink: #1f1b18;
+  --muted: #5f5750;
+  --line: #e4dcd1;
+  --on-accent: #1f1b18; /* text that sits on top of your color */
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, var(--bg));
+  --accent-text: color-mix(in srgb, var(--accent) 45%, var(--ink));
+
+  --font-main: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-pixel: "Silkscreen", ui-monospace, "Courier New", monospace;
+  --radius: 20px;
+}
+
+/* Colors for dark mode (switches automatically) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17151a;
+    --surface: #221f25;
+    --ink: #f4efe9;
+    --muted: #b8afa7;
+    --line: #38333c;
+    --accent-text: var(--accent);
+  }
+}
+
+/* ---------- Basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-main);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--accent-text);
+}
+
+/* The outline you see when using the keyboard (Tab key) */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.container {
+  width: min(100% - 2.5rem, 1080px);
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Header ---------- */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-pixel);
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--on-accent);
+}
+
+.nav ul {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+/* Flexbox lets the text fill the space if you delete the photo */
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-block: 3rem 5.5rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem 0.4rem 0.8rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  outline: 2px solid var(--ink);
+  animation: blink 1.6s steps(1) infinite;
+}
+
+.status-label {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  margin: 1.25rem 0 1rem;
+  font-size: clamp(3.25rem, 10vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.intro {
+  max-width: 34ch;
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.45;
+}
+
+/* If you delete the photo, the text gets bigger to fill the space */
+.hero-text:only-child h1 {
+  font-size: clamp(3.5rem, 12vw, 8.5rem);
+}
+
+.hero-text:only-child .intro {
+  max-width: 44ch;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  background: var(--surface);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover {
+  color: var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.btn-main,
+.btn-main:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* The round photo */
+.photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: min(38%, 340px);
+  margin-right: 14px; /* room for the shadow */
+}
+
+.photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 14px 14px 0 var(--ink);
+}
+
+.photo-initials {
+  color: var(--on-accent);
+  font-family: var(--font-pixel);
+  font-size: clamp(4rem, 13vw, 6.5rem);
+}
+
+/* Works for photos and avatars (transparent parts show your color) */
+.photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticker {
+  position: absolute;
+  left: -0.5rem;
+  bottom: -0.6rem; /* sits on the bottom edge so it never covers your face or initials */
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  transform: rotate(-8deg);
+}
+
+.sparkle {
+  position: absolute;
+  width: 30px;
+  color: var(--ink);
+}
+
+.sparkle-1 {
+  top: -6px;
+  right: 6px;
+}
+
+.sparkle-2 {
+  top: 14%;
+  left: -4px;
+  width: 18px;
+  color: var(--accent-text);
+}
+
+/* ---------- Sections ---------- */
+.section .container {
+  padding-block: 4.5rem;
+  border-top: 2px dashed var(--line);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.75rem;
+  color: var(--accent-text);
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+}
+
+.section-label::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+}
+
+.section h2 {
+  margin: 0 0 2.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+}
+
+/* ---------- Projects ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* cards keep the same size with 1, 2, or more projects */
+  gap: 1.5rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.project-bar {
+  display: flex;
+  gap: 6px;
+  padding: 0.75rem 1rem;
+  background: var(--accent-soft);
+  border-bottom: 2px solid var(--ink);
+}
+
+.project-bar span {
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.project h3 a {
+  text-decoration: none;
+}
+
+.project h3 a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.project p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: auto 0 0;
+  padding: 0.5rem 0 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.2rem 0.7rem;
+  background: var(--accent-soft);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---------- About ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+
+.bio p {
+  max-width: 60ch;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.skills h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 0.4rem 0.9rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ---------- Contact ---------- */
+.contact-card {
+  padding: clamp(1.5rem, 6vw, 4rem);
+  background: var(--accent-soft);
+  border: 2px solid var(--ink);
+  border-radius: 32px;
+}
+
+.contact-card h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  max-width: 46ch;
+  margin: 0 0 2rem;
+  font-size: 1.15rem;
+}
+
+.email-link {
+  font-size: clamp(1.3rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  overflow-wrap: anywhere; /* long emails wrap instead of running off the screen */
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+.email-link:hover {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+}
+
+/* ---------- Footer ---------- */
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 2.5rem 3rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Phones & small screens ---------- */
+@media (max-width: 760px) {
+  .hero .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    padding-block: 1.5rem 4rem;
+  }
+
+  .photo-wrap {
+    order: -1; /* photo goes above your name */
+    width: 230px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .nav a {
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+/* ---------- Animation ---------- */
+@keyframes blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Turns off motion for people who prefer less of it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

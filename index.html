@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--
+  Hey! This is your portfolio. Here's how to make it yours.
+
+  Every spot you need to change is tagged with "EDIT:" plus a keyword.
+  Press Ctrl+F (Cmd+F on Mac) and search any of these to jump right to it:
+
+    EDIT: TITLE      the name in the browser tab
+    EDIT: INITIALS   your initials (2 spots)
+    EDIT: STATUS     what you're up to right now
+    EDIT: NAME       your name
+    EDIT: INTRO      one sentence about you
+    EDIT: LINKS      email, GitHub, LinkedIn buttons
+    EDIT: PHOTO      your photo (optional)
+    EDIT: STICKER    the tilted sticker
+    EDIT: PROJECTS   your projects
+    EDIT: BIO        your about section
+    EDIT: SKILLS     your skills
+    EDIT: CONTACT    your contact message
+    EDIT: EMAIL      your email (2 spots)
+    EDIT: FOOTER     your name at the bottom
+
+  Shortcut: use Find & Replace (Ctrl+H, or Cmd+Option+F on Mac) to swap
+  "Your Name", "your.name@example.com", and "YN" everywhere at once.
+
+  Want a different color? Open style.css. The options are at the top.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: TITLE (shows in the browser tab) -->
+  <title>Your Name — Student Developer</title>
+
+  <!-- EDIT: TITLE (a one-line description of you for Google) -->
+  <meta name="description" content="Your Name is a computer science student at Irvine Valley College who builds friendly web apps.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <!-- EDIT: INITIALS (2 or 3 letters fit best) -->
+      <a class="logo" href="#top" aria-label="Back to top">YN</a>
+
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero (the top of the page) -->
+    <section class="hero" id="top">
+      <div class="container">
+
+        <div class="hero-text">
+          <p class="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-label">Currently:</span>
+            <!-- EDIT: STATUS -->
+            <span>learning React &amp; building a study app</span>
+          </p>
+
+          <!-- EDIT: NAME -->
+          <h1>Your Name</h1>
+
+          <!-- EDIT: INTRO -->
+          <p class="intro">CS student at Irvine Valley College who builds small, friendly web apps that make student life easier.</p>
+
+          <!-- EDIT: LINKS
+               Paste your links inside the quotes. Keep "mailto:" in front of your email.
+               No LinkedIn yet? Just delete that line. -->
+          <div class="buttons">
+            <!-- EDIT: EMAIL -->
+            <a class="btn btn-main" href="mailto:your.name@example.com">Email me</a>
+            <a class="btn" href="https://github.com/yourname">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/yourname">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- EDIT: PHOTO
+             The photo is optional. You can:
+               - keep the initials circle as it is
+               - swap in a photo or avatar (steps below)
+               - remove the circle by deleting everything down to "photo end" -->
+        <div class="photo-wrap">
+          <div class="photo">
+            <!-- EDIT: INITIALS -->
+            <span class="photo-initials">YN</span>
+
+            <!-- To use a photo instead:
+                 1. Upload your picture to the repo and name it photo.jpg
+                 2. Delete the initials line above
+                 3. Click the img line below and press Ctrl+/ (Cmd+/ on Mac) to turn it on
+                 The file name has to match exactly, so Photo.JPG won't work. -->
+            <!-- <img class="photo-img" src="photo.jpg" alt="Photo of Your Name"> -->
+          </div>
+
+          <!-- EDIT: STICKER (keep it short, like "★ Hire me!" or "★ Hi there!") -->
+          <p class="sticker">★ Open to internships</p>
+
+          <!-- Little sparkle decorations, you can leave these alone -->
+          <svg class="sparkle sparkle-1" viewBox="0 0 5 5" aria-hidden="true" shape-rendering="crispEdges">
+            <rect x="2" y="0" width="1" height="5" fill="currentColor"/>
+            <rect x="0" y="2" width="5" height="1" fill="currentColor"/>
+          </svg>
+          <svg class="sparkle sparkle-2" viewBox="0 0 5 5" aria-hidden="true" shape-rendering="crispEdges">
+            <rect x="2" y="0" width="1" height="5" fill="currentColor"/>
+            <rect x="0" y="2" width="5" height="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <!-- photo end -->
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="section-label">01 / Projects</p>
+        <h2>Things I've built</h2>
+
+        <!-- EDIT: PROJECTS
+             Each project goes from "project start" to "project end".
+             To add one, copy a whole block and paste it below the others.
+             To remove one, delete the whole block.
+             No projects yet? Class assignments and club work count too. -->
+        <div class="projects">
+
+          <!-- project start -->
+          <article class="project">
+            <div class="project-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="project-body">
+              <h3><a href="https://github.com/yourname/study-buddy">Study Buddy ↗</a></h3>
+              <p>A flashcard app that lets classmates share decks and quiz each other before exams.</p>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+          <!-- project end -->
+
+          <!-- project start -->
+          <article class="project">
+            <div class="project-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="project-body">
+              <h3><a href="https://github.com/yourname/campus-eats">Campus Eats Map ↗</a></h3>
+              <p>An interactive map of affordable food spots near campus, with filters for hours and price.</p>
+              <ul class="tags">
+                <li>JavaScript</li>
+                <li>Leaflet</li>
+                <li>REST API</li>
+              </ul>
+            </div>
+          </article>
+          <!-- project end -->
+
+          <!-- project start -->
+          <article class="project">
+            <div class="project-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="project-body">
+              <h3><a href="https://github.com/yourname/pixel-pet">Pixel Pet ↗</a></h3>
+              <p>A tiny 8-bit game where you feed, play with, and care for a pet that lives on your desktop.</p>
+              <ul class="tags">
+                <li>Python</li>
+                <li>Pygame</li>
+              </ul>
+            </div>
+          </article>
+          <!-- project end -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-label">02 / About</p>
+        <h2>A little about me</h2>
+
+        <div class="about-grid">
+          <!-- EDIT: BIO (each <p> is one paragraph, delete the second one if you don't need it) -->
+            <!-- FILL IN THE BLANKS!!! -->
+          <div class="bio">
+            <p>I'm a computer science student at Irvine Valley College, planning to transfer to a four-year university. I got into coding by __________, and now I love building small tools that __________.</p>
+            <p>Outside of class, __________, __________, and __________.</p>
+          </div>
+
+          <div class="skills">
+            <h3>Skills</h3>
+            <!-- EDIT: SKILLS (one per line, and write &amp; instead of &) -->
+             <!-- You can also add or remove items as you choose! -->
+            <ul>
+              <li>HTML &amp; CSS</li>
+              <li>JavaScript</li>
+              <li>Python</li>
+              <li>Java</li>
+              <li>Git &amp; GitHub</li>
+              <li>Figma</li>
+              <li>Public speaking</li>
+              <li>Larping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <p class="section-label">03 / Contact</p>
+          <h2>Let's talk!</h2>
+          <!-- EDIT: CONTACT (what are you looking for?) -->
+          <p>I'm looking for summer 2027 internships and always happy to chat about web dev, pixel art, or joining the CS Club.</p>
+          <!-- EDIT: EMAIL (change it in both spots on this line) -->
+          <a class="email-link" href="mailto:your.name@example.com">your.name@example.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Built at the IVC CS Club Web Design workshop</p>
+      <!-- EDIT: FOOTER -->
+      <p>© 2026 Your Name</p>
+    </div>
+  </footer>
+
+</body>
+</html>
